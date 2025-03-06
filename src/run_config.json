@@ -1,7 +1,7 @@
 {
     "ENGINE": "solid",
-    "save_dir": ".",
-    "config_name": "DM",
+    "save_dir": "DM_5x6_HS_NUBPLT_DEFTMB_NOLED_EXTCTRL",
+    "config_name": "DM_5x6_HS_NUBPLT_DEFTMB_NOLED_EXTCTRL",
     "show_caps": "MX",
     "show_pcbs": false,
     "nrows": 5,
@@ -321,7 +321,7 @@
         17.5
     ],
     "fixed_tenting": 0.0,
-    "plate_style": "NOTCH",
+    "plate_style": "HS_NUB",
     "hole_keyswitch_height": 14.0,
     "hole_keyswitch_width": 14.0,
     "nub_keyswitch_height": 14.4,

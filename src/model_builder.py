@@ -14,18 +14,18 @@ config_options = [
     },
     {
         'name': '{}x{}', 'vars': ['nrows', 'ncols'],
-        'vals':[(4, 5), (5, 6)],
+        'vals':[(5, 6)],
         # 'vals': [(4, 5), (4, 6), (5, 6), (6, 6)],
     },
     {
         'name': '{}PLT', 'vars': ['plate_style'],
-        'vals': ['NOTCH', 'HS_NOTCH'],
+        'vals': ['HS_NUB'],
         # 'vals': ['NUB', 'NOTCH', 'HS_NUB', 'HS_NOTCH'],
     },
     {
         'name': '{}TMB', 'vars': ['thumb_style'],
-        'vals': ['DEFAULT', 'MINIDOX', 'TRACKBALL_ORBISSYL'],
-        'val_names': ['DEF', 'MDOX', 'ORBY']
+        'vals': ['CARBONFET', 'TRACKBALL_ORBYL', 'TRACKBALL_CJ', 'DEFAULT'],
+        'val_names': ['CF', 'ORBY', 'CJ', 'DEF']
         # 'vals': ['DEFAULT', 'MINI', 'CARBONFET', 'MINIDOX'],
         # 'val_names': ['DEF', 'MINI', 'CF', 'MDOX']
     },
@@ -36,9 +36,25 @@ config_options = [
     },
     {
         'name': '{}CTRL', 'vars': ['controller_mount_type'],
-        'vals': ['EXTERNAL', 'RJ9_USB_WALL'],
+        'vals': ['EXTERNAL'],
         'val_names': ['EXT', 'DEF'],
     },
+    {
+        'name': '{}', 'vars': ['trackball_in_wall'],
+        'vals': [True, False],
+        'val_names': ['TBIW', ''],
+    },
+#    {
+#        'name': '{}OFFSET', 'vars': ['keyboard_z_offset'],
+#        'vals': [11, 9, 6],
+#        'val_names': ['11', '9', '7']
+#    },
+    #{
+    #    'name': '{}TEST', 'vars': ['tenting_angle'],
+    #    'vals': [11, 9, 7],
+    #    'val_names': ['11', '9', '7']
+    #},
+
 ]
 
 
@@ -102,7 +118,8 @@ def build_release(base, configurations, engines=('solid', 'cadquery')):
 if __name__ == '__main__':
     configurations = create_config(config_options)
 
-    ENGINES = ['solid', 'cadquery']
-    # ENGINES = ['solid']
+    #ENGINES = ['solid', 'cadquery']
+    #ENGINES = ['cadquery']
+    ENGINES = ['solid']
 
     build_release(base, configurations, ENGINES)
