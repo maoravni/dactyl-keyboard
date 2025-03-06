@@ -4307,31 +4307,49 @@ def baseplate(wedge_angle=None, side='right'):
 
 def run():
 
-    mod_r, tmb_r = model_side(side="right")
-    export_file(shape=mod_r, fname=path.join(save_path, config_name + r"_right"))
-    export_file(shape=tmb_r, fname=path.join(save_path, config_name + r"_thumb_right"))
+    try:
+        mod_r, tmb_r = model_side(side="right")
+        export_file(shape=mod_r, fname=path.join(save_path, config_name + r"_right"))
+        export_file(shape=tmb_r, fname=path.join(save_path, config_name + r"_thumb_right"))
+    except:
+        print("exception on model_side(side=\"right\")")
 
     #base = baseplate(mod_r, tmb_r, side='right')
-    base = baseplate(side='right')
-    export_file(shape=base, fname=path.join(save_path, config_name + r"_right_plate"))
-    export_dxf(shape=base, fname=path.join(save_path, config_name + r"_right_plate"))
+    try:
+        base = baseplate(side='right')
+        export_file(shape=base, fname=path.join(save_path, config_name + r"_right_plate"))
+        export_dxf(shape=base, fname=path.join(save_path, config_name + r"_right_plate"))
+    except:
+        print("exception on baseplate(side='right')")
 
     if symmetry == "asymmetric":
-        mod_l, tmb_l = model_side(side="left")
-        export_file(shape=mod_l, fname=path.join(save_path, config_name + r"_left"))
-        export_file(shape=tmb_l, fname=path.join(save_path, config_name + r"_thumb_left"))
+        try:
+            mod_l, tmb_l = model_side(side="left")
+            export_file(shape=mod_l, fname=path.join(save_path, config_name + r"_left"))
+            export_file(shape=tmb_l, fname=path.join(save_path, config_name + r"_thumb_left"))
+        except:
+            print("exception on model left")
 
         #base_l = mirror(baseplate(mod_l, tmb_l, side='left'), 'YZ')
-        base_l = mirror(baseplate(side='left'), 'YZ')
-        export_file(shape=base_l, fname=path.join(save_path, config_name + r"_left_plate"))
-        export_dxf(shape=base_l, fname=path.join(save_path, config_name + r"_left_plate"))
+        try:
+            base_l = mirror(baseplate(side='left'), 'YZ')
+            export_file(shape=base_l, fname=path.join(save_path, config_name + r"_left_plate"))
+            export_dxf(shape=base_l, fname=path.join(save_path, config_name + r"_left_plate"))
+        except:
+            print("exception on mirror left")
 
     else:
-        export_file(shape=mirror(mod_r, 'YZ'), fname=path.join(save_path, config_name + r"_left"))
+        try:
+            export_file(shape=mirror(mod_r, 'YZ'), fname=path.join(save_path, config_name + r"_left"))
+        except:
+            print("exception on mirror left")
 
-        lbase = mirror(base, 'YZ')
-        export_file(shape=lbase, fname=path.join(save_path, config_name + r"_left_plate"))
-        export_dxf(shape=lbase, fname=path.join(save_path, config_name + r"_left_plate"))
+        try:
+            lbase = mirror(base, 'YZ')
+            export_file(shape=lbase, fname=path.join(save_path, config_name + r"_left_plate"))
+            export_dxf(shape=lbase, fname=path.join(save_path, config_name + r"_left_plate"))
+        except:
+            print("exception on mirror left")
 
 
 

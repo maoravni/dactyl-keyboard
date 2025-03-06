@@ -19,13 +19,15 @@ config_options = [
     },
     {
         'name': '{}PLT', 'vars': ['plate_style'],
-        'vals': ['HS_NUB'],
+        'vals': ['HS_NOTCH'],
         # 'vals': ['NUB', 'NOTCH', 'HS_NUB', 'HS_NOTCH'],
     },
     {
         'name': '{}TMB', 'vars': ['thumb_style'],
-        'vals': ['CARBONFET', 'TRACKBALL_ORBYL', 'TRACKBALL_CJ', 'DEFAULT'],
-        'val_names': ['CF', 'ORBY', 'CJ', 'DEF']
+        'vals': ['CARBONFET', 'DEFAULT'],
+        'val_names': ['CF', 'DEF']
+        #'vals': ['CARBONFET', 'TRACKBALL_ORBYL', 'TRACKBALL_CJ', 'DEFAULT'],
+        #'val_names': ['CF', 'ORBY', 'CJ', 'DEF']
         # 'vals': ['DEFAULT', 'MINI', 'CARBONFET', 'MINIDOX'],
         # 'val_names': ['DEF', 'MINI', 'CF', 'MDOX']
     },
@@ -39,11 +41,11 @@ config_options = [
         'vals': ['EXTERNAL'],
         'val_names': ['EXT', 'DEF'],
     },
-    {
-        'name': '{}', 'vars': ['trackball_in_wall'],
-        'vals': [True, False],
-        'val_names': ['TBIW', ''],
-    },
+    # {
+    #     'name': '{}', 'vars': ['trackball_in_wall'],
+    #     'vals': [True, False],
+    #     'val_names': ['TBIW', ''],
+    # },
 #    {
 #        'name': '{}OFFSET', 'vars': ['keyboard_z_offset'],
 #        'vals': [11, 9, 6],
@@ -118,8 +120,9 @@ def build_release(base, configurations, engines=('solid', 'cadquery')):
 if __name__ == '__main__':
     configurations = create_config(config_options)
 
-    #ENGINES = ['solid', 'cadquery']
+    ENGINES = ['solid', 'cadquery']
+    #ENGINES = ['blender']
     #ENGINES = ['cadquery']
-    ENGINES = ['solid']
+    #ENGINES = ['solid']
 
     build_release(base, configurations, ENGINES)
