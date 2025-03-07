@@ -19,13 +19,13 @@ config_options = [
     },
     {
         'name': '{}PLT', 'vars': ['plate_style'],
-        'vals': ['HS_NOTCH'],
+        'vals': ['HS_NUB'],
         # 'vals': ['NUB', 'NOTCH', 'HS_NUB', 'HS_NOTCH'],
     },
     {
         'name': '{}TMB', 'vars': ['thumb_style'],
-        'vals': ['CARBONFET', 'DEFAULT'],
-        'val_names': ['CF', 'DEF']
+        'vals': ['CARBONFET'],
+        'val_names': ['CF']
         #'vals': ['CARBONFET', 'TRACKBALL_ORBYL', 'TRACKBALL_CJ', 'DEFAULT'],
         #'val_names': ['CF', 'ORBY', 'CJ', 'DEF']
         # 'vals': ['DEFAULT', 'MINI', 'CARBONFET', 'MINIDOX'],
@@ -33,7 +33,7 @@ config_options = [
     },
     {
         'name': '{}', 'vars': ['oled_mount_type'],
-        'vals': ['CLIP', 'NONE'],
+        'vals': ['CLIP'],
         'val_names': ['OLED', 'NOLED']
     },
     {
@@ -43,7 +43,7 @@ config_options = [
     },
     # {
     #     'name': '{}', 'vars': ['trackball_in_wall'],
-    #     'vals': [True, False],
+    #     'vals': [False],
     #     'val_names': ['TBIW', ''],
     # },
 #    {
@@ -120,9 +120,9 @@ def build_release(base, configurations, engines=('solid', 'cadquery')):
 if __name__ == '__main__':
     configurations = create_config(config_options)
 
-    ENGINES = ['solid', 'cadquery']
+    #ENGINES = ['solid', 'cadquery']
     #ENGINES = ['blender']
-    #ENGINES = ['cadquery']
+    ENGINES = ['cadquery', 'solid']
     #ENGINES = ['solid']
 
     build_release(base, configurations, ENGINES)

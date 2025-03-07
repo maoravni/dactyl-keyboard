@@ -1,7 +1,7 @@
 {
     "ENGINE": "cadquery",
-    "save_dir": "DM_5x6_HS_NUBPLT_CFTMB_OLED_EXTCTRL",
-    "config_name": "DM_5x6_HS_NUBPLT_CFTMB_OLED_EXTCTRL",
+    "save_dir": "DM_5x6_HS_NUBPLT_ORBYTMB_OLED_EXTCTRL",
+    "config_name": "DM_5x6_HS_NUBPLT_ORBYMB_OLED_EXTCTRL",
     "show_caps": "",
     "show_pcbs": false,
     "nrows": 5,
@@ -27,7 +27,7 @@
     "web_thickness": 5.1,
     "post_size": 0.1,
     "post_adj": 0,
-    "thumb_style": "CARBONFET",
+    "thumb_style": "TRACKBALL_ORBYL",
     "default_1U_cluster": true,
     "minidox_Usize": 1.6,
     "mini_index_key": true,
